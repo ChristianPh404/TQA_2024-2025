@@ -62,7 +62,9 @@ Donde con np.polyint integramos el polinomio de la capacidad calorífica con pol
 # Cálculo de entropía
 
 $$S^{ig}=S^{\circ} (g)\int^{T}_{298.15} \frac{Cp}{T}dT - R \ ln \frac{P}{10^5}$$
+
 Es decir  si definimos: 
+
 $$C_{{p}^{\,ig}} = \sum^{i=n}_{i=1}a_iT^{\ i-1}$$
 
 $$S^{ig} = a_1 \ln\frac{T}{298.15} + \sum_{i=2}^{i=n} \frac {a_i} {(i - 1)} (T^{i-1}-298.15^{i-1})- R \ ln \frac{P}{10^5}$$
