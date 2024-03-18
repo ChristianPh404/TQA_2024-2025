@@ -35,16 +35,17 @@ ACP_tabla = np.array([19.8, 0.07344, -5.602e-5, 1.715e-8])
 ACP = ACP_tabla[::-1]
 ```
 Con np.array lo que hacemos es crear un vector. En caso de introducir solo un valor numérico, también se puede introducir una cadena de texto ('string') para trabajar con ella. Siempre el vector que queremos va entre [ ], y como todas las funciones, el objetivo sobre el que realizamos la función va entre ( ). Es decir, si por ejemplo hubiéramos definido un vector ACP como ACP = [19.8, 0.07344, -5.602e-5, 1.715e-8], en la siguiente línea se usaría np.array(ACP).<br><br>
->[!NOTE] Recordatorio útil
->$$ACP(T) = 1.715 \times 10^{-8} \cdot T^3 - 5.602 \times 10^{-5} \cdot T^2 + 0.07344 \cdot T + 19.8$$
-<br>
+>[!NOTE]
+> $$ACP(T) = 1.715 \times 10^{-8} \cdot T^3 - 5.602 \times 10^{-5} \cdot T^2 + 0.07344 \cdot T + 19.8$$
 
+
+<br>
 El polinomio de la capacidad calorífica, ACP, puede encontrarse ordenado en orden creciente o decreciente. En este caso, lo encontramos en orden creciente. Para volverlo en orden decreciente:
 
 1. Usando la función flip de la biblioteca NumPy, es decir, ACP = np.flip(ACP).
    
 2. Usando la sintaxis [0:-1:-1] en Python, como en la mayoría de los lenguajes, el primer elemento es el 0 y el último se puede conocer con la función len, que nos devuelve la longitud del vector. Sin embargo, es mucho más sencillo usar -1 para representar el último elemento y -2 para el penúltimo. El último valor en la sintaxis -1 indica la distancia entre los elementos. Es decir, creamos un vector que tenga la misma longitud que el inicial, pero que vaya recorriendo la secuencia en orden inverso. Al usar todo el vector, podemos omitir la posición del primero y el último, quedando simplemente como **[::-1]**.
-<br>   
+ 
 # Cálculo de entalpía.
  $$H^{ig} = \Delta_f H^o (g) + \int_{T}^{298.15} C_{{p}^{\,ig}} \, \ dT$$
 
