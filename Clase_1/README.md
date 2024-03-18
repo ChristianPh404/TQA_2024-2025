@@ -274,7 +274,8 @@ Calculamos la capacidad calorífica con el polinomio obtenido de Chao (con la fu
 
 # Modelo de Joback-Reid y Rarey-Nannolal
 En algunas ocasiones, es posible que no se disponga de datos bibliográficos para nuestra sustancia. En estas situaciones, es conveniente recurrir a métodos alternativos. Ambos métodos se basan en la contribución por grupos, lo que significa que cada grupo presente en nuestra molécula contribuye a un parámetro específico. Consideremos el caso del 1-hexeno, C<sub>6</sub>H<sub>12</sub>.
-![1-hexene](Clase_1\imagenes\1-hexene.png)
+![1-hexene](Clase_1/imagenes/1-hexene.png)
+
 tendriamos:
 grupos que contribuyen:
 - -CH3: 1.0
@@ -284,6 +285,7 @@ grupos que contribuyen:
 esto lo podemos comprobar en [Joback](Joback.py). el modelo de rarey-Nannoal tiene en cuenta mas parametros por lo que nos dara un mejor resultado
 >[!CAUTION]Aspecto a considerar
 > La capacidad calorífica siempre estará definida dentro de un rango de temperatura. En los cálculos, es más preciso utilizar el polinomio de capacidad calorífica proporcionado por la bibliografía, si está disponible, en lugar de uno calculado a partir de datos experimentales. Además, el polinomio calculado con datos experimentales será más confiable que aquel generado mediante modelos de contribución de grupos.
+
 # Ejercicio propuesto:
 - Comparar el valor de la capacidad calorífica calculada con Chao's con la primera presión tabulada de la bibliografía para cada T y ver cuál es el error respecto del último.
   
