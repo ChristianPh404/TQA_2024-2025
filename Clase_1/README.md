@@ -60,6 +60,7 @@ print(ACPi)
 Donde con np.polyint integramos el polinomio de la capacidad calorífica con polyint. Este comando tiene la siguiente estructura: np.polyint(p, m=None, k=None), donde p es el polinomio a integrar (en nuestro caso ACPi), m (opcional) es el grado del polinomio. Si no se indica ninguno, tomará el grado del polinomio p + 1, y k (opcional) es el valor de la constante al integrar, que por defecto usaremos el 0. Con polyval, el primer argumento será el polinomio y el segundo las condiciones donde se evalúa.
 
 # Cálculo de entropía
+
 $$S^{ig}=S^{\circ} (g)\int^{T}_{298.15} \frac{Cp}{T}dT - R \ ln \frac{P}{10^5}$$
 Es decir  si definimos: 
 $$C_{{p}^{\,ig}} = \sum^{i=n}_{i=1}a_iT^{\ i-1}$$
