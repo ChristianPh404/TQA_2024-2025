@@ -270,6 +270,7 @@ Cpcal=np.polyval(Aexp,T)
 print('Cpcal J/mol K ',Cpcal)
 print('Diferencia, %:',(Cpcal-Cp_ig)/Cpcal*100)
 ```
+![](Clase_1\imagenes\Cp_Prop.png)
 Calculamos la capacidad calorífica con el polinomio obtenido de Chao (con la función polyval) y lo comparamos con el último punto que teníamos en la primera bibliografía para cada T. Cuando usamos el argumento '%' en el segundo print, es para que este nos lo devuelva automáticamente en formato de porcentaje
 
 # Modelo de Joback-Reid y Rarey-Nannolal
@@ -283,7 +284,7 @@ grupos que contribuyen:
 - =CH2: 1.0
 - =CH-: 1.0
 esto lo podemos comprobar en [Joback](Joback.py). el modelo de rarey-Nannoal tiene en cuenta mas parametros por lo que nos dara un mejor resultado
-> [!CAUTION] Aspecto a considerar
+>[!WARNING] Aspecto a considerar
 > La capacidad calorífica siempre estará definida dentro de un rango de temperatura. En los cálculos, es más preciso utilizar el polinomio de capacidad calorífica proporcionado por la bibliografía, si está disponible, en lugar de uno calculado a partir de datos experimentales. Además, el polinomio calculado con datos experimentales será más confiable que aquel generado mediante modelos de contribución de grupos.
 
 # Ejercicio propuesto:
