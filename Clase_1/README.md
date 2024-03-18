@@ -159,7 +159,7 @@ Cuando usamos set_xlabel o set_ylabel, ya sea detrás de axes o de un plot, lo q
 distintas presiones y temperaturas, calcular los coeficientes de un ajuste polinomial para la
 capacidad calorífica como gas ideal
 
-
+<div align="center">
               
 | P, kg/cm<sup>2</sup>  / T  | 20°C | 40°C | 60°C | 80°C |
 | :-------------------------: | ---- | ---- | ---- | ---- |
@@ -176,6 +176,7 @@ capacidad calorífica como gas ideal
 
 >CP, J mol<sup>-1</sup> K<sup>-1</sup> en las columnas 20 40 60 y 80
 
+</div>
 
 ```Python
 import numpy as np
@@ -241,9 +242,15 @@ print('Valores de C_p como gas ideal, extrapolando a P=0')
 print('T/K :         ', T)
 print('a_0 J/mol K   ', Cp_ig)
 ```
+<br>
 Comparar el resultado con el obtenido a partir de los datos propuestos por Chao (1973):
+<br>
+<br>
+
+<div align="center">
+
 | Temperatura (K) | Capacidad Calorífica ( J/mol<sup>-1</sup> K<sup>-1</sup>) |
-| --------------- | ------------------------------ |
+| :---------------: | :------------------------------: |
 | 200             | 56.07                          |
 | 273.15          | 68.74                          |
 | 298.15          | 73.6                           |
@@ -255,6 +262,8 @@ Comparar el resultado con el obtenido a partir de los datos propuestos por Chao 
 | 800             | 154.77                         |
 | 900             | 165.35                         |
 | 1000            | 174.6                          |
+
+</div>
 
 ```Python
 # Comparación con valores de Chao, 1973
