@@ -94,13 +94,14 @@ Como en las operaciones estamos usando números flotantes, a la hora de visualiz
 >[!IMPORTANT]
 > Este paso se debe realizar siempre al final, ya que arrastraría el error del redondeo en las operaciones.
 # Ejemplos a calcular:
-| DATOS  |Dióxido de carbono, C<sub style="margin-left: 0.15em;"></sub>O<sub>2</sub> |Difluorometano, CH<sub>2</sub>F<sub>2</sub>| Benceno, C<sub>6</sub>H<sub>6</sub>|
-| :------------- | :-------------: |:-------------: |:-------------: |
-| P (bar)  | 5 | 6|5|
-| T (K)  | 500  | 650| 575|
-| Δ<sub>f</sub>H<sup>°</sup>(g) , (kJ/mol)   | -393.5  | -452.3|  82.9|
-| S<sup>°</sup>(g) , J/(mol K) | 213.8   | 246.7 |  269.2|
-| C<sub>p</sub><sup>ig</sup> , J/(mol K)| 19.80 + 0.07344 𝑇 − 5.602 · 10<sup>-5</sup> 𝑇<sup>2</sup> + 1.715 · 10<sup>-8</sup> 𝑇<sup>3</sup>   | 11.79 + 0.1181 𝑇 − 4.843 · 10<sup>-5</sup> 𝑇<sup>2</sup> + 2.125 · 10<sup>-9</sup> 𝑇<sup>3</sup>|  -33.92 + 0.4739 𝑇 − 3.017 · 10<sup>-4</sup> 𝑇<sup>2</sup> + 7.130 · 10<sup>-8</sup> 𝑇<sup>3</sup>|
+| DATOS  | Dióxido de carbono, C<sub style="margin-left: 0.15em;"></sub>O<sub>2</sub> | Difluorometano, CH<sub>2</sub>F<sub>2</sub> | Benceno, C<sub>6</sub>H<sub>6</sub> |
+| :------------- | :-------------: | :-------------: | :-------------: |
+| P (bar)         | 5               | 6               | 5               |
+| T (K)            | 500             | 650             | 575             |
+| Δ<sub>f</sub>H<sup>°</sup>(g) , (kJ/mol) | -393.5 | -452.3 | 82.9          |
+| S<sup>°</sup>(g) J/(mol K)             | 213.8  | 246.7  | 269.2         |
+| C<sub>p</sub><sup>ig</sup> , J/(mol K)   | <span nowrap>19.80 + 0.07344 𝑇 − 5.602e-5 𝑇<sup>2</sup> + 1.715e-8 𝑇<sup>3</sup></span> | <span nowrap>11.79 + 0.1181 𝑇 − 4.843e-5 𝑇<sup>2</sup> + 2.125e-9 𝑇<sup>3</sup></span> | <span nowrap>-33.92 + 0.4739 𝑇 − 3.017e-4 𝑇<sup>2</sup> + 7.130e-8 𝑇<sup>3</sup></span> |
+
 # Influencia de la temperatura
 ```Python
 # Crea un vector de temperaturas
@@ -126,7 +127,7 @@ axes[1].set_xlabel('T, K')
 axes[1].set_ylabel('S$^{ig}$, J/mol')
 plt.show()
 ```
-![Uig](Clase_1\imagenes\Hig_Sig.png)
+![Hig](https://github.com/ChristianPh404/TQA_2024-2025/blob/main/Clase_1/imagenes/Hig_Sig.png)
 En esta sección, importamos la biblioteca que usaremos para trazar gráficos. La línea fig, axes = plt.subplots(1, 2, figsize=(12, 4)) crea un objeto llamado fig, que será la figura principal que contendrá nuestras subfiguras, representadas por la lista axes. Con plt.subplots(1, 2), creamos una figura con una fila y dos columnas para las subfiguras. Además, con figsize=(12, 4), especificamos las dimensiones de la figura principal en pulgadas. Es importante destacar que estas dimensiones se aplican a la figura principal, no a las subfiguras representadas por axes[0] y axes[1]."
 ## Representacion U<sub>ig</sub> , G<sub>ig</sub> y A<sub>ig</sub> frente a la temperatura
 $$ U^{ig} = H^{ig}-PV^{ig}= H^{ig}-RT$$
@@ -146,27 +147,29 @@ axes2[1].set_xlabel('T, K')
 axes2[1].set_ylabel('G$^{ig}$, A$^{ig}$, kJ/mol K')
 plt.show()
 ```
-![Uig](Clase_1\imagenes\Uig_Gig.png)
+![Uig](https://github.com/ChristianPh404/TQA_2024-2025/blob/main/Clase_1/imagenes/Uig_Gig.png)
 Cuando usamos set_xlabel o set_ylabel, ya sea detrás de axes o de un plot, lo que hacemos es asignar un nombre a la etiqueta del eje correspondiente. Además, con legend mostramos la leyenda, que nos permite entender qué representa cada línea del diagrama. Finalmente, con plt.show() conseguimos que se muestre la figura que hemos creado.
 # Estimación de la Cp del propano como gas ideal
 4. A partir de los siguientes datos para la capacidad calorífica del propano (M=44.097 g/mol) a
 distintas presiones y temperaturas, calcular los coeficientes de un ajuste polinomial para la
 capacidad calorífica como gas ideal
 
-|           |             |         | CP, J mol<sup>-1</sup> K<sup>-1</sup> |         |          |
-| :------------: | ------------ | ------------ | ------------ | ------------ | ------------ |
-| P, kg/cm<sup>2</sup>  / T  |              | 20°C         | 40°C         | 60°C         | 80°C         |
-|    0.5       |             | 73.06        | 76.53        | 80.55        | 84.59        |
-|    1.0       |             | 73.51        | 76.95        | 80.93        | 84.79        |
-|    2.0       |             | 74.47        | 77.79        | 81.54        | 85.36        |
-|    3.5       |             | 76.32        | 79.19        | 82.56        | 86.19        |
-|    5.0       |             | 78.48        | 80.63        | 83.56        | 86.97        |
-|    6.5       |             | 81.13        | 82.44        | 85.00        | 88.01        |
-|    8.0       |             | 84.57        | 84.61        | 86.45        | 89.02        |
-|    10        |             |              | 88.01        | 88.65        | 90.65        |
-|    12        |             |              | 93.18        | 91.28        | 92.39        |
-|    14        |             |              |              | 94.95        | 94.37        |
 
+              
+| P, kg/cm<sup>2</sup>  / T  | 20°C | 40°C | 60°C | 80°C |
+| :-------------------------: | ---- | ---- | ---- | ---- |
+|             0.5             | 73.06| 76.53| 80.55| 84.59|
+|             1.0             | 73.51| 76.95| 80.93| 84.79|
+|             2.0             | 74.47| 77.79| 81.54| 85.36|
+|             3.5             | 76.32| 79.19| 82.56| 86.19|
+|             5.0             | 78.48| 80.63| 83.56| 86.97|
+|             6.5             | 81.13| 82.44| 85.00| 88.01|
+|             8.0             | 84.57| 84.61| 86.45| 89.02|
+|             10              | 88.01| 88.65| 88.65| 90.65|
+|             12              | 93.18| 91.28| 92.39| 92.39|
+|             14              |      | 94.95| 94.37| 94.37|
+
+>CP, J mol<sup>-1</sup> K<sup>-1</sup> en las columnas 20 40 60 y 80
 
 
 ```Python
