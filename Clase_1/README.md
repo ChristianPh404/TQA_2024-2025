@@ -12,13 +12,13 @@ P_R=1e5
 A lo largo de este curso se utilizarán diversas librerías. A diferencia de MATLAB, Python es un lenguaje de programación muy potente que ofrece una gran versatilidad, pero para muchas operaciones siempre será necesario utilizar primero el nombre de la librería y luego la función. Por ejemplo, np.array. Durante el curso, será necesario importar distintas librerías o funciones específicas de estas. Las principales que usaremos seran:
 <br>
 
-- Numpy: Siempre al importar la librería, le cambiaremos el nombre a np, de forma que la línea será import numpy as np. Aunque se puede dejar el nombre como numpy, dado que la utilizaremos con frecuencia, esto nos facilitará la lectura del código. La biblioteca NumPy será necesaria para trabajar con los vectores (array), realizar operaciones matemáticas y trabajar con booleanos (Operadores logicos,que devuelven un valor verdadero o falso como son AND, OR, NOT, == , != , < , > , =< , >=  estos operadores se utilizan en estructuras de control tipo while, if, for, etc.) o como base para otras bibliotecas.
+- [Numpy](https://numpy.org/doc/stable/user/absolute_beginners.html): Siempre al importar la librería, le cambiaremos el nombre a np, de forma que la línea será import numpy as np. Aunque se puede dejar el nombre como numpy, dado que la utilizaremos con frecuencia, esto nos facilitará la lectura del código. La biblioteca NumPy será necesaria para trabajar con los vectores (array), realizar operaciones matemáticas y trabajar con booleanos (Operadores logicos,que devuelven un valor verdadero o falso como son AND, OR, NOT, == , != , < , > , =< , >=  estos operadores se utilizan en estructuras de control tipo while, if, for, etc.) o como base para otras bibliotecas.
   
-- scipy: Esta biblioteca la usaremos especialmente para integración numérica, optimización y cálculos iterativos.
+- [scipy](https://docs.scipy.org/doc/scipy/tutorial/index.html#user-guide): Esta biblioteca la usaremos especialmente para integración numérica, optimización y cálculos iterativos.
   
-- matplotlib.pyplot: **Esta biblioteca la acortaremos renombrándola como plt**, es decir, la línea quedaría así: import matplotlib.pyplot as plt. Esta biblioteca se usará para representar las **gráficas** en la asignatura.
+- [matplotlib.pyplot](https://matplotlib.org/stable/index.html): **Esta biblioteca la acortaremos renombrándola como plt**, es decir, la línea quedaría así: import matplotlib.pyplot as plt. Esta biblioteca se usará para representar las **gráficas** en la asignatura.
   
-> Aunque en los scripts las tablas se muestran con un print, estas se pueden hacer con la biblioteca pandas, que normalmente se importa como import pandas as pd. Esta biblioteca permite trabajar con tablas de datos (Dataframes), de forma que si queremos usar varias fuentes o automatizar el código para hacer un cálculo de varias sustancias, es muy cómodo.
+> Aunque en los scripts las tablas se muestran con un print, estas se pueden hacer con la biblioteca [pandas](https://pandas.pydata.org/docs/user_guide/index.html#user-guide), que normalmente se importa como import pandas as pd. Esta biblioteca permite trabajar con tablas de datos (Dataframes), de forma que si queremos usar varias fuentes o automatizar el código para hacer un cálculo de varias sustancias, es muy cómodo.
 
 # Condiciones y datos tabulados.
 ```Python
@@ -126,6 +126,7 @@ axes[1].set_xlabel('T, K')
 axes[1].set_ylabel('S$^{ig}$, J/mol')
 plt.show()
 ```
+![Uig](Clase_1\imagenes\Hig_Sig.png)
 En esta sección, importamos la biblioteca que usaremos para trazar gráficos. La línea fig, axes = plt.subplots(1, 2, figsize=(12, 4)) crea un objeto llamado fig, que será la figura principal que contendrá nuestras subfiguras, representadas por la lista axes. Con plt.subplots(1, 2), creamos una figura con una fila y dos columnas para las subfiguras. Además, con figsize=(12, 4), especificamos las dimensiones de la figura principal en pulgadas. Es importante destacar que estas dimensiones se aplican a la figura principal, no a las subfiguras representadas por axes[0] y axes[1]."
 ## Representacion U<sub>ig</sub> , G<sub>ig</sub> y A<sub>ig</sub> frente a la temperatura
 $$ U^{ig} = H^{ig}-PV^{ig}= H^{ig}-RT$$
@@ -145,6 +146,7 @@ axes2[1].set_xlabel('T, K')
 axes2[1].set_ylabel('G$^{ig}$, A$^{ig}$, kJ/mol K')
 plt.show()
 ```
+![Uig](Clase_1\imagenes\Uig_Gig.png)
 Cuando usamos set_xlabel o set_ylabel, ya sea detrás de axes o de un plot, lo que hacemos es asignar un nombre a la etiqueta del eje correspondiente. Además, con legend mostramos la leyenda, que nos permite entender qué representa cada línea del diagrama. Finalmente, con plt.show() conseguimos que se muestre la figura que hemos creado.
 # Estimación de la Cp del propano como gas ideal
 4. A partir de los siguientes datos para la capacidad calorífica del propano (M=44.097 g/mol) a
@@ -270,7 +272,7 @@ Cpcal=np.polyval(Aexp,T)
 print('Cpcal J/mol K ',Cpcal)
 print('Diferencia, %:',(Cpcal-Cp_ig)/Cpcal*100)
 ```
-![s](Clase_1\imagenes\Cp_Prop.png)
+![s](https://github.com/ChristianPh404/TQA_2024-2025/blob/main/Clase_1/imagenes/Cp_Prop.png)
 Calculamos la capacidad calorífica con el polinomio obtenido de Chao (con la función polyval) y lo comparamos con el último punto que teníamos en la primera bibliografía para cada T. Cuando usamos el argumento '%' en el segundo print, es para que este nos lo devuelva automáticamente en formato de porcentaje
 
 # Modelo de Joback-Reid y Rarey-Nannolal
@@ -284,7 +286,7 @@ grupos que contribuyen:
 - =CH2: 1.0
 - =CH-: 1.0
 esto lo podemos comprobar en [Joback](Joback.py). el modelo de rarey-Nannoal tiene en cuenta mas parametros por lo que nos dara un mejor resultado
->[!WARNING] 
+>[!CAUTION] 
 > La capacidad calorífica siempre estará definida dentro de un rango de temperatura. En los cálculos, es más preciso utilizar el polinomio de capacidad calorífica proporcionado por la bibliografía, si está disponible, en lugar de uno calculado a partir de datos experimentales. Además, el polinomio calculado con datos experimentales será más confiable que aquel generado mediante modelos de contribución de grupos.
 
 # Ejercicio propuesto:
