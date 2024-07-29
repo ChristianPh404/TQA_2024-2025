@@ -212,6 +212,10 @@ ax[0].plot(Pgr20, np.polyval(A20,Pgr20),'-b', label = 'Ajuste 20')
 - En ax[0], es decir, la primera subfigura, vamos a dibujar con la primera línea los puntos experimentales. Al usar o*, el o indica que son puntos y el * será la letra que asigna el color. Si, por el contrario, en vez de o usamos -, indicamos que sea una línea continua que vaya entre los puntos. Como en pgr20 habíamos creado el vector con 100 puntos, para representarlo es necesario evaluar en el polinomio que habíamos creado previamente, a20, en los valores de cada punto, es decir, pgr20.
   
 - Con label, lo que hacemos es darle una etiqueta a lo que hemos representado, para luego poder verlo en la leyenda. Es decir, nos aparecerá en la leyenda que los puntos azules son T=20 y la línea azul es el ajuste.
+- ## Sección de Ejemplo {#seccion-ejemplo}
+<div id="Prueba">
+    <!-- Contenido de tu sección de ejemplo -->
+</div>
 ```Python
 A40=np.polyfit(P40,Cp40,n)
 Pgr40 = np.linspace(0,P40[-1],100)
@@ -315,5 +319,13 @@ esto lo podemos comprobar en [Joback](Joback.py). el modelo de rarey-Nannoal tie
        - entre 300 y 1500 K, cada 10 K
        - H: color rojo
        - S: color azul
-       - G: color negro
+       - G: color negr
 - Calcular el polinomio de la capacidad calorífica utilizando modelos de contribución de grupos.
+```mermaid
+graph TD;
+    A-->B[goals];
+    A-->C;
+    C-->B;
+    click B "#Prueba";
+    
+```
